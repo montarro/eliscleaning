@@ -167,34 +167,39 @@ export default function Home() {
             className="relative mx-4 -mt-10 flex flex-col gap-5 rounded-3xl bg-white p-5 shadow-[0_30px_60px_rgba(20,26,18,0.18)] sm:mx-8 sm:-mt-24 sm:p-7 lg:mx-20 lg:-mt-[120px]"
           >
             <QuoteForm />
-            <div className="grid grid-cols-1 gap-3 border-t border-[#ECE8DE] pt-4 text-sm font-medium text-[#3D3F38] sm:grid-cols-2 lg:grid-cols-4">
-              {trustBadges.map((b) => (
-                <span key={b.label} className="flex items-center gap-2.5">
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#4E6B3F"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    {b.icon}
-                  </svg>
-                  {b.label}
-                </span>
-              ))}
-            </div>
           </section>
 
           {/* PROMISE */}
           <FadeUp>
-            <section className="flex flex-col gap-6 px-5 py-14 sm:px-8 sm:py-20 lg:flex-row lg:gap-16 lg:px-20 lg:pb-20 lg:pt-24">
-              <p className="m-0 font-serif text-[26px] font-light leading-[1.25] text-[#1F211C] sm:text-3xl lg:flex-1 lg:text-[38px]">
+            <section className="flex flex-col gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:px-20 lg:pb-20 lg:pt-24">
+              <p className="m-0 font-serif text-[26px] font-light leading-[1.25] text-[#1F211C] sm:text-3xl lg:text-[38px]">
                 Quality work, honest service, and a fresh, organised home or yard{" "}
                 <span className="italic text-[#4E6B3F]">every single time.</span>
               </p>
+              <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
+                {trustBadges.map((b) => (
+                  <div
+                    key={b.label}
+                    className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(20,26,18,0.06)] transition-transform duration-300 hover:-translate-y-1"
+                  >
+                    <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#DDE6D0]">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#4E6B3F"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        {b.icon}
+                      </svg>
+                    </span>
+                    <span className="text-[15px] font-semibold text-[#1F211C]">{b.label}</span>
+                  </div>
+                ))}
+              </div>
             </section>
           </FadeUp>
 
@@ -237,7 +242,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="flex min-h-[220px] flex-col gap-4 rounded-3xl bg-[#2A3726] p-7 transition-transform duration-300 hover:-translate-y-1.5 sm:min-h-[250px]">
+                <div className="flex min-h-[220px] flex-col gap-4 rounded-3xl bg-[#2A3726] p-7 transition-transform duration-300 hover:-translate-y-1.5 sm:min-h-[250px] lg:col-span-2">
                   <span className="font-serif text-base text-[#A9BD95]">05</span>
                   <h3 className="m-0 font-serif text-[22px] font-normal text-white sm:text-[26px]">
                     NDIS support
@@ -248,17 +253,18 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="flex min-h-[220px] flex-col justify-between gap-6 rounded-3xl bg-[#DDE6D0] p-7 transition-transform duration-300 hover:-translate-y-1.5 sm:min-h-[250px]">
-                  <p className="m-0 font-serif text-[22px] font-light leading-[1.2] text-[#1F2A1C] sm:text-[28px]">
-                    Not sure which clean <span className="italic">you need?</span>
-                  </p>
-                  <a
-                    href="/quote"
-                    className="self-start rounded-full bg-[#1F2A1C] px-5 py-3 text-sm font-semibold text-white no-underline"
-                  >
-                    Ask us, we&apos;ll help
-                  </a>
-                </div>
+              </div>
+
+              <div className="flex flex-col items-start gap-4 rounded-3xl bg-[#DDE6D0] px-6 py-5 transition-transform duration-300 hover:-translate-y-1 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+                <p className="m-0 font-serif text-[20px] font-light leading-[1.2] text-[#1F2A1C] sm:text-[24px]">
+                  Not sure which clean <span className="italic">you need?</span>
+                </p>
+                <a
+                  href="/quote"
+                  className="flex-shrink-0 rounded-full bg-[#1F2A1C] px-5 py-3 text-sm font-semibold text-white no-underline"
+                >
+                  Ask us, we&apos;ll help
+                </a>
               </div>
             </section>
           </FadeUp>
