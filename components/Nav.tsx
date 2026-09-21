@@ -13,7 +13,7 @@ export default function Nav({ phone }: { phone: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="relative z-20 flex h-24 items-center justify-between px-5 sm:px-8 lg:px-20">
+    <header className="relative z-20 flex h-20 items-center justify-between px-5 sm:px-8 lg:px-20">
       <a href="#top" className="flex items-center gap-3 no-underline">
         <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/70">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -22,10 +22,10 @@ export default function Nav({ phone }: { phone: string }) {
             <path d="M10 20v-6h4v6"></path>
           </svg>
         </span>
-        <span className="font-serif text-lg text-white sm:text-xl">Eli&apos;s Cleaning and Lawn Services</span>
+        <span className="font-serif text-base text-white sm:text-lg">Eli&apos;s Cleaning and Lawn Services</span>
       </a>
 
-      <nav className="hidden items-center gap-8 text-[15px] lg:flex">
+      <nav className="hidden items-center gap-7 text-sm lg:flex">
         {links.map((l) => (
           <a key={l.href} href={l.href} className="text-white no-underline hover:opacity-80">
             {l.label}
@@ -36,7 +36,7 @@ export default function Nav({ phone }: { phone: string }) {
         </a>
         <a
           href="#quote"
-          className="rounded-full bg-white px-6 py-3 font-semibold text-[#1F2A1C] no-underline hover:opacity-90"
+          className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#1F2A1C] no-underline hover:opacity-90"
         >
           Get a free quote
         </a>
