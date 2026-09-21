@@ -6,7 +6,6 @@ import FadeUp from "@/components/FadeUp";
 const PHONE = "[PHONE]";
 const EMAIL = "[EMAIL]";
 const ABN = "[ABN]";
-const REVIEW_SOURCE = "[REVIEW SOURCE]";
 
 const trustBadges = [
   {
@@ -140,9 +139,6 @@ export default function Home() {
             <Nav phone={PHONE} />
 
             <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-5 px-5 pb-28 pt-6 text-center sm:px-8 sm:pb-44 sm:pt-10 lg:px-20 lg:pb-52 lg:pt-14">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#D9E3CC] sm:text-[13px]">
-                Family owned · Melbourne&apos;s west · Since 2019
-              </div>
               <h1 className="m-0 max-w-3xl font-serif text-[40px] font-light leading-[1.05] text-white sm:text-5xl lg:text-[68px] lg:leading-[1.02]">
                 Clean spaces and tidy yards,{" "}
                 <span className="italic">looked after by a local family.</span>
@@ -195,9 +191,6 @@ export default function Home() {
           {/* PROMISE */}
           <FadeUp>
             <section className="flex flex-col gap-6 px-5 py-14 sm:px-8 sm:py-20 lg:flex-row lg:gap-16 lg:px-20 lg:pb-20 lg:pt-24">
-              <div className="flex-shrink-0 text-[13px] font-semibold uppercase tracking-[0.16em] text-[#4E6B3F] lg:w-[260px] lg:pt-3">
-                Our promise
-              </div>
               <p className="m-0 font-serif text-[26px] font-light leading-[1.25] text-[#1F211C] sm:text-3xl lg:flex-1 lg:text-[38px]">
                 Quality work, honest service, and a fresh, organised home or yard{" "}
                 <span className="italic text-[#4E6B3F]">every single time.</span>
@@ -224,7 +217,7 @@ export default function Home() {
                 {services.map((s) => (
                   <div
                     key={s.n}
-                    className="flex min-h-[220px] flex-col gap-4 rounded-3xl bg-[#2A3726] p-7 sm:min-h-[250px]"
+                    className="flex min-h-[220px] flex-col gap-4 rounded-3xl bg-[#2A3726] p-7 transition-transform duration-300 hover:-translate-y-1.5 sm:min-h-[250px]"
                   >
                     <span className="font-serif text-base text-[#A9BD95]">{s.n}</span>
                     <h3 className="m-0 font-serif text-[22px] font-normal text-white sm:text-[26px]">
@@ -234,27 +227,17 @@ export default function Home() {
                   </div>
                 ))}
 
-                <div className="relative min-h-[220px] overflow-hidden rounded-3xl bg-[#2A3726] sm:min-h-[250px]">
-                  <Image
-                    src="/images/lawn.jpg"
-                    alt="A mowed backyard lawn"
-                    fill
-                    sizes={workSizes}
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-[rgba(22,30,19,0.6)]" />
-                  <div className="relative flex h-full flex-col gap-4 p-7">
-                    <span className="font-serif text-base text-[#D9E3CC]">04</span>
-                    <h3 className="m-0 font-serif text-[22px] font-normal text-white sm:text-[26px]">
-                      Outdoor
-                    </h3>
-                    <p className="m-0 text-[15px] leading-[1.7] text-[#EDEFE8]">
-                      Lawn mowing · [OTHER OUTDOOR SERVICES]
-                    </p>
-                  </div>
+                <div className="flex min-h-[220px] flex-col gap-4 rounded-3xl bg-[#2A3726] p-7 transition-transform duration-300 hover:-translate-y-1.5 sm:min-h-[250px]">
+                  <span className="font-serif text-base text-[#A9BD95]">04</span>
+                  <h3 className="m-0 font-serif text-[22px] font-normal text-white sm:text-[26px]">
+                    Outdoor
+                  </h3>
+                  <p className="m-0 text-[15px] leading-[1.7] text-[#C9D3BE]">
+                    Lawn mowing · [OTHER OUTDOOR SERVICES]
+                  </p>
                 </div>
 
-                <div className="flex min-h-[220px] flex-col gap-4 rounded-3xl bg-[#2A3726] p-7 sm:min-h-[250px]">
+                <div className="flex min-h-[220px] flex-col gap-4 rounded-3xl bg-[#2A3726] p-7 transition-transform duration-300 hover:-translate-y-1.5 sm:min-h-[250px]">
                   <span className="font-serif text-base text-[#A9BD95]">05</span>
                   <h3 className="m-0 font-serif text-[22px] font-normal text-white sm:text-[26px]">
                     NDIS support
@@ -265,12 +248,12 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="flex min-h-[220px] flex-col justify-between gap-6 rounded-3xl bg-[#DDE6D0] p-7 sm:min-h-[250px]">
+                <div className="flex min-h-[220px] flex-col justify-between gap-6 rounded-3xl bg-[#DDE6D0] p-7 transition-transform duration-300 hover:-translate-y-1.5 sm:min-h-[250px]">
                   <p className="m-0 font-serif text-[22px] font-light leading-[1.2] text-[#1F2A1C] sm:text-[28px]">
                     Not sure which clean <span className="italic">you need?</span>
                   </p>
                   <a
-                    href="#quote"
+                    href="/quote"
                     className="self-start rounded-full bg-[#1F2A1C] px-5 py-3 text-sm font-semibold text-white no-underline"
                   >
                     Ask us, we&apos;ll help
@@ -345,23 +328,11 @@ export default function Home() {
               className="flex flex-col gap-8 px-5 pb-14 sm:px-8 sm:pb-20 lg:flex-row lg:items-center lg:gap-20 lg:px-20 lg:pb-24"
             >
               <div className="relative mx-auto h-[380px] w-full max-w-[400px] flex-shrink-0 sm:h-[500px] lg:mx-0 lg:w-[440px]">
-                <div className="absolute left-0 top-0 flex h-[86%] w-[85%] items-center justify-center rounded-3xl bg-[#DCD6C8] text-sm text-[#5B5E55]">
+                <div className="flex h-full w-full items-center justify-center rounded-3xl bg-[#DCD6C8] text-sm text-[#5B5E55]">
                   [PHOTO OF ALDA]
-                </div>
-                <div className="absolute bottom-0 right-0 h-[45%] w-[45%] overflow-hidden rounded-[20px] border-8 border-[#F4F0E6]">
-                  <Image
-                    src="/images/living.jpg"
-                    alt="Living room after a clean"
-                    fill
-                    sizes="220px"
-                    className="object-cover"
-                  />
                 </div>
               </div>
               <div className="flex flex-1 flex-col gap-5">
-                <div className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[#4E6B3F]">
-                  About us
-                </div>
                 <h2 className={`${h2} text-[#1F211C]`}>
                   Hi, I&apos;m <span className="italic">Alda.</span>
                 </h2>
@@ -375,7 +346,7 @@ export default function Home() {
                   around your schedule so you can enjoy your space without the stress.
                 </p>
                 <a
-                  href="#quote"
+                  href="/quote"
                   className="mt-1 self-start rounded-full bg-[#1F2A1C] px-6 py-3.5 text-[15px] font-semibold text-white no-underline"
                 >
                   Book a clean with us
@@ -391,12 +362,26 @@ export default function Home() {
             id="reviews"
             className="mx-auto flex max-w-[1440px] flex-col gap-8 px-5 py-14 sm:px-8 sm:py-20 lg:gap-10 lg:px-20 lg:py-24"
           >
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div className="flex flex-col items-center gap-3 text-center">
               <h2 className={`${h2} text-[#1F211C]`}>
-                Kind <span className="italic text-[#4E6B3F]">words</span>
+                Our clients <span className="italic text-[#4E6B3F]">speak for us</span>
               </h2>
-              <span className="text-sm text-[#5B5E55]">
-                Verified reviews from {REVIEW_SOURCE}
+              <span className="flex items-center gap-2 text-sm text-[#5B5E55]">
+                <span className="flex items-center gap-0.5" aria-label="5 out of 5 stars">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <svg
+                      key={i}
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="#FBBC04"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 2l2.95 6.32 6.92.87-5.1 4.78 1.32 6.85L12 17.4l-6.09 3.42 1.32-6.85-5.1-4.78 6.92-.87z" />
+                    </svg>
+                  ))}
+                </span>
+                Verified reviews from Google
               </span>
             </div>
             <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
@@ -427,7 +412,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#quote"
+                  href="/quote"
                   className="rounded-full bg-[#1F2A1C] px-7 py-4 text-[15px] font-semibold text-white no-underline sm:text-base"
                 >
                   Get a free quote
