@@ -105,37 +105,33 @@ export default function Home() {
       <div className="flex flex-col bg-[#F4F0E6] font-sans text-[#1F211C]">
         {/* HERO */}
         <section id="top" className="relative overflow-hidden bg-[#1A2016]">
-          <div className="absolute inset-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            <Image
-              src="/images/living.jpg"
-              alt=""
-              width={400}
-              height={900}
-              priority
-              className="hidden h-full w-full object-cover sm:block"
-            />
-            <Image
-              src="/images/bathroom.jpg"
-              alt=""
-              width={400}
-              height={900}
-              priority
-              className="h-full w-full object-cover"
-            />
-            <Image
-              src="/images/floor.jpg"
-              alt=""
-              width={400}
-              height={900}
-              className="hidden h-full w-full object-cover lg:block"
-            />
-            <Image
-              src="/images/bedroom.jpg"
-              alt=""
-              width={400}
-              height={900}
-              className="h-full w-full object-cover"
-            />
+          <div className="absolute inset-0 grid grid-cols-2 lg:grid-cols-4">
+            <div className="relative hidden lg:block">
+              <Image src="/images/living.jpg" alt="" fill priority sizes="25vw" className="object-cover" />
+            </div>
+            <div className="relative">
+              <Image
+                src="/images/bathroom.jpg"
+                alt=""
+                fill
+                priority
+                sizes="(max-width: 1024px) 50vw, 25vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative hidden lg:block">
+              <Image src="/images/floor.jpg" alt="" fill priority sizes="25vw" className="object-cover" />
+            </div>
+            <div className="relative">
+              <Image
+                src="/images/bedroom.jpg"
+                alt=""
+                fill
+                priority
+                sizes="(max-width: 1024px) 50vw, 25vw"
+                className="object-cover"
+              />
+            </div>
           </div>
           <div className="absolute inset-0 bg-[rgba(22,28,19,0.62)]" />
 
@@ -241,6 +237,7 @@ export default function Home() {
                   src="/images/lawn.jpg"
                   alt="A mowed backyard lawn"
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-[rgba(22,30,19,0.6)]" />
@@ -295,41 +292,41 @@ export default function Home() {
                 See more on Instagram →
               </a>
             </div>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:auto-rows-[260px] lg:grid-cols-3 lg:auto-rows-[382px]">
-              <div className="overflow-hidden rounded-3xl bg-[#E3DED2] sm:row-span-2">
+            <div className="grid auto-rows-[260px] grid-cols-1 gap-4 sm:grid-cols-2 lg:auto-rows-[382px] lg:grid-cols-3">
+              <div className="relative overflow-hidden rounded-3xl bg-[#E3DED2] sm:row-span-2">
                 <Image
                   src="/images/bathroom.jpg"
                   alt="Clean bathroom with arched mirrors and double basins"
-                  width={480}
-                  height={780}
-                  className="h-full w-full object-cover"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
                 />
               </div>
-              <div className="overflow-hidden rounded-3xl bg-[#E3DED2]">
+              <div className="relative overflow-hidden rounded-3xl bg-[#E3DED2]">
                 <Image
                   src="/images/floor.jpg"
                   alt="Polished timber floors after a post-renovation clean"
-                  width={480}
-                  height={382}
-                  className="h-full w-full object-cover"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
                 />
               </div>
-              <div className="overflow-hidden rounded-3xl bg-[#E3DED2] sm:row-span-2">
+              <div className="relative overflow-hidden rounded-3xl bg-[#E3DED2] sm:row-span-2">
                 <Image
                   src="/images/bedroom.jpg"
                   alt="Bright bedroom with fresh linen"
-                  width={480}
-                  height={780}
-                  className="h-full w-full object-cover"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
                 />
               </div>
-              <div className="overflow-hidden rounded-3xl bg-[#E3DED2]">
+              <div className="relative overflow-hidden rounded-3xl bg-[#E3DED2]">
                 <Image
                   src="/images/bedroom2.jpg"
                   alt="Made bed with folded towels ready for guests"
-                  width={480}
-                  height={382}
-                  className="h-full w-full object-cover"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -350,9 +347,9 @@ export default function Home() {
                 <Image
                   src="/images/living.jpg"
                   alt="Living room after a clean"
-                  width={220}
-                  height={260}
-                  className="h-full w-full object-cover"
+                  fill
+                  sizes="240px"
+                  className="object-cover"
                 />
               </div>
             </div>

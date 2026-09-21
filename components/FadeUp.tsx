@@ -14,10 +14,16 @@ export default function FadeUp({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Content is visible by default so it never depends on JS; only hide
+    // elements still below the fold, then reveal them as they scroll in.
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+
+    el.classList.add("fade-up-pending");
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
+          entry.target.classList.remove("fade-up-pending");
+          entry.target.classList.add("fade-up-visible");
           observer.unobserve(entry.target);
         }
       },
@@ -28,7 +34,7 @@ export default function FadeUp({
   }, []);
 
   return (
-    <div ref={ref} className={`fade-up ${className}`}>
+    <div ref={ref} className={className}>
       {children}
     </div>
   );
